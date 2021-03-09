@@ -1,0 +1,163 @@
+footer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 1px solid $gray-200;
+	background-color: $gray-100;
+	@include breakpoint(992px) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	> .container > .flex {
+		align-items: center;
+		justify-content: space-between;
+	}
+	.left {
+		max-width: 600px;
+		font-size: 13px;
+		@include breakpoint(992px) {
+			max-width: 500px;
+		}
+		@include breakpoint(max-width 991px) {
+			padding-left: 5px;
+			padding-right: 5px;
+			order: 2;
+		}
+	}
+	.right {
+        display: flex;
+		@include breakpoint(max-width 991px) {
+			padding-left: 5px;
+			padding-right: 5px;
+			flex-direction: column;
+			order: 1;
+		}
+		@include breakpoint(992px) {
+			margin-top: 20px;
+			flex-direction: row;
+			align-items: flex-end;
+		}
+	}
+	ul {
+        @include list(0, 0, none);
+        display: flex;
+        flex-wrap: wrap;
+		&.cwlink {
+			margin-bottom: 20px;
+			line-height: 1.1;
+			@include breakpoint(max-width 991px) {
+				display: none;
+			}
+			@include breakpoint(992px) {
+				margin-right: -100px;
+			}
+			li {
+				padding: 0 1em;
+				a {
+					color: $black;
+					&:hover {
+						color: $surface-variant;
+					}
+				}
+				&:first-child {
+					padding-left: 0;
+				}
+				+ li {
+					border-left: 1px solid $black;
+				}
+			}
+		}
+		&.cwSns {
+			li {
+				+ li {
+					margin-left: 10px;
+				}
+				img {
+                    display: none;
+				}
+                a{
+                    color: $secondary;
+                    &::after {
+                        font-family: $icomoon-font-family;
+                        font-size: 1.875rem;
+                    }
+                }
+                &.fb a {
+                    &::after {
+                        @include beforeafter($icon-facebook, block);
+                    }
+                    &:hover {
+                        color: $facebook;
+                    }
+                }
+                &.line a {
+                    &::after {
+                        @include beforeafter($icon-line, block);
+                    }
+                    &:hover {
+                        color: $line;
+                    }
+                }
+                &.ig a {
+                    &::after {
+                        @include beforeafter($icon-instagram, block);
+                    }
+                    &:hover {
+                        color: $instagram;
+                    }
+                }
+                &.rss a {
+                    &::after {
+                        @include beforeafter($icon-rss, block);
+                    }
+                    &:hover {
+                        color: $rss;
+                    }
+                }
+			}
+		}
+		&.app-logo {
+			li {
+				+ li {
+					margin-left: 0.6rem;
+				}
+				img {
+					width: auto;
+					height: 35px;
+				}
+			}
+		}
+	}
+	.cwData {
+		span {
+			display: inline-block;
+			margin-right: 1em;
+			&:nth-child(4) {
+				@include breakpoint(max-width 991px) {
+					margin-top: 1em;
+				}
+			}
+			a {
+				color: $black;
+				&:hover {
+					color: $surface-variant;
+				}
+			}
+		}
+	}
+	.appStore {
+		@include breakpoint(992px) {
+			margin-left: 25px;
+		}
+		@include breakpoint(max-width 991px) {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.title {
+			margin-bottom: 10px;
+			font-size: 13px;
+			@include breakpoint(992px) {
+				text-align: center;
+			}
+		}
+	}
+}

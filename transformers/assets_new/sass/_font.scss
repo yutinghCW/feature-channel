@@ -1,0 +1,116 @@
+@font-face {
+	font-family: "#{$icomoon-font-family}";
+	src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?jw5g2i");
+	src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?jw5g2i#iefix")
+			format("embedded-opentype"),
+		url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?jw5g2i")
+			format("truetype"),
+		url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?jw5g2i")
+			format("woff"),
+		url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?jw5g2i##{$icomoon-font-family}")
+			format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+.icon {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "#{$icomoon-font-family}" !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-right {
+	&:before {
+		content: $icon-right;
+	}
+}
+.icon-left {
+	&:before {
+		content: $icon-left;
+	}
+}
+.icon-play {
+	&:before {
+		content: $icon-play;
+	}
+}
+.icon-search {
+	&:before {
+		content: $icon-search;
+	}
+}
+.icon-dot-triangle {
+	&:before {
+		content: $icon-dot-triangle;
+	}
+}
+.icon-search {
+	&:before {
+		content: $icon-search;
+	}
+}
+.icon-user-filled {
+	&:before {
+		content: $icon-user-filled;
+	}
+}
+.icon-user-outlined {
+	&:before {
+		content: $icon-user-outlined;
+	}
+}
+.icon-facebook {
+	&:before {
+		content: $icon-facebook;
+	}
+}
+.icon-instagram {
+	&:before {
+		content: $icon-instagram;
+	}
+}
+.icon-line {
+	&:before {
+		content: $icon-line;
+	}
+}
+.icon-rss {
+	&:before {
+		content: $icon-rss;
+	}
+}
+.icon-cancel {
+	&:before {
+		content: $icon-cancel;
+	}
+}
+.icon-arrow-right {
+	&:before {
+		content: $icon-arrow-right;
+	}
+}
+.icon-arrow-left {
+	&:before {
+		content: $icon-arrow-left;
+	}
+}
+.icon-arrow-down {
+	&:before {
+		content: $icon-arrow-down;
+	}
+}
+.icon-arrow-up {
+	&:before {
+		content: $icon-arrow-up;
+	}
+}

@@ -1,0 +1,226 @@
+@import '_basic';
+@import '_variables';
+
+nav {
+    position: fixed;
+    width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    font-size: 0;
+    background-color: rgba($surface, 0.5);
+    z-index: 1;
+    > .container > .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: 767px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    .logoSet {
+        display: inline-block;
+        vertical-align: middle;
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            img {
+                display: none;
+                @media screen and (min-width: 768px) {
+                    width: 125px;
+                    &.desktop {
+                        display: block;
+                    }
+                }
+                @media screen and (max-width: 767px) {
+                    height: 25px;
+                    &.mobile {
+                        display: block;
+                    }
+                }
+            }
+            &.cwLogo {
+                margin-right: 10px;
+                img {
+                    display: block;
+                    @media screen and (min-width: 768px) {
+                        width: 130px;
+                    }
+                    @media screen and (max-width: 767px) {
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .search-member {
+        ul {
+            @include list(0, 0, none);
+            > li {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        > ul {
+            > li {
+                display: inline-block;
+                vertical-align: middle;
+                + li {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+.ham {
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+    span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: $primary;
+        + span {
+            margin-top: 5px;
+        }
+    }
+}
+form.search {
+    font-size: 0;
+    > * {
+        padding: 0 10px;
+        font-size: 1rem;
+        line-height: 35px;
+        background: none;
+        border: solid transparent;
+        border-width: 1px 0;
+        outline: 0;
+    }
+    input, button, .close {
+        display: inline-block;
+        vertical-align: middle;
+        border-bottom-color: $white;
+    }
+    input {
+        padding-right: 0;
+    }
+    button {
+        &::after {
+            @include beforeafter($icon-search, block);
+            font-family: $icomoon-font-family;
+        }
+    }
+    .close {
+        display: none;
+        &::after {
+            @include beforeafter($icon-cancel, block);
+            font-family: $icomoon-font-family;
+        }
+    }
+    .search-btn {
+        @media screen and (min-width: 768px) {
+            &:not(#dosearch) {
+                display: none;
+            }
+        }
+        &::after {
+            @include beforeafter($icon-search, block);
+            font-family: $icomoon-font-family;
+        }
+    }
+}
+.member {
+    position: relative;
+    font-size: 0;
+    > .user-btn {
+        font-size: 1.25rem;
+        line-height: 35px;
+        background: none;
+        border: solid transparent;
+        border-width: 1px 0;
+        outline: 0;
+        cursor: pointer;
+        &::after {
+            @include beforeafter($icon-user-outlined, block);
+            font-family: $icomoon-font-family;
+        }
+    }
+    .slide-down-block {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding-top: 10px;
+        font-size: 1rem;
+        &::before, &::after {
+            @include beforeafter('', block);
+            position: absolute;
+            right: 10px;
+            width: 0;
+            height: 0;
+            margin: 0 auto;
+            border-style: solid;
+            @include translateX(50%);
+        }
+        &::before {
+            top: 3px;
+            border-width: 0 7px 10px;
+            border-color: transparent transparent $black transparent;
+            z-index: -1;
+        }
+        &::after {
+            top: 5px;
+            border-width: 0 5px 6px;
+            border-color: transparent transparent $white transparent;
+            z-index: 1;
+        }
+        ul {
+            padding: 1rem;
+            background-color: $white;
+            border: 1px solid $black;
+            li {
+                min-width: 3em;
+                padding: 0.25rem 0;
+                &.userName {
+                    padding: 0 0 0.5rem;
+                    margin-bottom: 0.5rem;
+                    border-bottom: 1px solid $secondary;
+                }
+                &.signout {
+                    padding: 0.5rem 0 0;
+                    margin-top: 0.5rem;
+                    border-top: 1px solid $secondary;
+                }
+                span {
+                    display: inline-block;
+                }
+                a {
+                    display: block;
+                    color: $black;
+                    text-align: center;
+                    &:hover {
+                        color: $surface-variant;
+                    }
+                }
+            }
+        }
+    }
+    &.login{
+        > .user-btn::after {
+            @include beforeafter($icon-user-filled, block);
+        }
+        .slide-down-block {
+            ul {
+                li {
+                    width: 7em;
+                    a {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
